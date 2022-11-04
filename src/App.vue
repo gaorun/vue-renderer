@@ -1,19 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <VueRenderer :schema="schema" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VueRenderer from './components/renderer.vue'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    VueRenderer
+  },
+
+  data() {
+    this.schema = {
+      as: 'article',
+      style: {
+        fontSize: '14px',
+        color: '#333'
+      },
+      "#default": [
+        {
+          as: 'h2',
+          '#default': 'Hello World'
+        },
+        {
+          as: 'p',
+          '#default': '不积跬步无以至千里'
+        },
+      ]
+    }
   }
-}
+};
 </script>
 
 <style>
