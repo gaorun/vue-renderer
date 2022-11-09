@@ -5,33 +5,34 @@
 </template>
 
 <script>
-import VueRenderer from './components/renderer.vue'
+import VueRenderer from "./core/renderer.vue";
 
 export default {
   name: "App",
   components: {
-    VueRenderer
+    VueRenderer,
   },
 
   data() {
     this.schema = {
-      as: 'article',
+      as: "article",
       style: {
-        fontSize: '14px',
-        color: '#333'
+        fontSize: "14px",
+        color: "#333",
       },
       "#default": [
         {
-          as: 'h2',
-          '#default': 'Hello World'
+          as: "h2",
+          "#default": "Hello World",
         },
         {
-          as: 'p',
-          '#default': '不积跬步无以至千里'
+          as: "p",
+          "#default": "不积跬步无以至千里",
         },
-      ]
-    }
-  }
+      ],
+    };
+    return {};
+  },
 };
 </script>
 
